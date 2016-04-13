@@ -7,12 +7,15 @@ public class RPSGame {
 	public static final int PAPER = 1;
 	public static final int SCISSOR = 2;
 	
-	private int numberOfTies = 0;
-	private int numberOfWins = 0;
-	private int numberOfLoses = 0;
+	private int numberOfTies;
+	private int numberOfWins;
+	private int numberOfLoses;
 	private int move;
 	
 	public RPSGame() {
+		numberOfTies = 0;
+		numberOfWins = 0;
+		numberOfLoses = 0;
 	}
 	
 	public void generateComputerPlay() {
@@ -31,6 +34,18 @@ public class RPSGame {
 			this.numberOfLoses++;
 			return -1;
 		}
+	}
+
+	public int getLoses() {
+		return this.numberOfLoses;
+	}
+
+	public int getWins() {
+		return this.numberOfWins;
+	}
+
+	public int getTies() {
+		return this.numberOfTies;
 	}
 	
 }
