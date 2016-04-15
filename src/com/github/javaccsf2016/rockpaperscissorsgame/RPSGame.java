@@ -24,14 +24,16 @@ public class RPSGame {
 	}
 	
 	public int findWinner(int userMove) {
-		if (userMove == this.move) {
+		if (userMove == this.move && userMove >= 0 && userMove <= 2) {
 			this.numberOfTies++;
-			return 0;
+			return 1;
 		} else if(userMove - this.move == 1 || userMove - this.move == -2) {
 			this.numberOfWins++;
-			return 1;
-		} else {
+			return 2;
+		} else if(userMove - this.move == -1 || userMove - this.move == 2){
 			this.numberOfLoses++;
+			return 0;
+		} else {
 			return -1;
 		}
 	}

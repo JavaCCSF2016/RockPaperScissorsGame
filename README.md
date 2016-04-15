@@ -61,14 +61,14 @@ Add support for betting.
 
 ## Part 4: Extra Credit B - Text-Based Program ##
 Write a text-based driver program that allows the user to play through the console (instead of through a GUI).
-- [ ] Use only text input and output.
+- [x] Use only text input and output.
 - [x] Use the same RPSGame class that you used with the GUI- do not have a second, different RPSGame class.
 - Here is some pseudocode for the main method. It is not required to follow this algorithm:
-  - [ ] create an instance of the RPSGame
-  - [ ] while the user wants to keep playing:
-  - [ ] read in the move from the user 
-  - [ ] generate a move by the computer by invoking a method on the RPSGame object
-  - [ ] determine the outcome (the winner) by invoking a method on the RPS object
-  - [ ] get the updated game stats (number of computer wins, number of user wins, and number of ties) by invoking methods on the RPS object
-  - [ ] print out the outcome and game stats to the user
-  - [ ] find out if the user wants to keep playing
+  - [x] create an instance of the RPSGame
+  - [x] while the user wants to keep playing:
+  - [x] read in the move from the user 
+  - [x] generate a move by the computer by invoking a method on the RPSGame object
+  - [x] determine the outcome (the winner) by invoking a method on the RPS object
+  - [x] get the updated game stats (number of computer wins, number of user wins, and number of ties) by invoking methods on the RPS object
+  - [x] print out the outcome and game stats to the user
+  - [x] find out if the user wants to keep playing
