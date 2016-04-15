@@ -7,6 +7,10 @@ public class RPSGame {
 	public static final int PAPER = 1;
 	public static final int SCISSOR = 2;
 	
+	public static final int LOSE = 0;
+	public static final int TIE = 1;
+	public static final int WIN = 2;
+	
 	private int numberOfTies;
 	private int numberOfWins;
 	private int numberOfLoses;
@@ -24,16 +28,16 @@ public class RPSGame {
 	}
 	
 	public int findWinner(int userMove) {
-		if (userMove >= 0 && userMove <= 2) {
+		if (userMove >= ROCK && userMove <= SCISSOR) {
 			if (userMove == this.move) {
 				this.numberOfTies++;
-				return 1;
+				return TIE;
 			} else if(userMove - this.move == 1 || userMove - this.move == -2) {
 				this.numberOfWins++;
-				return 2;
+				return WIN;
 			} else {
 				this.numberOfLoses++;
-				return 0;
+				return LOSE;
 			} 
 		} else {
 			return -1;
