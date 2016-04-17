@@ -28,7 +28,7 @@ A Rock, Paper, Scissors Game School Project that allows a user to play RPS again
 
 ## Part 2: The GUI ##
 Write the GUI program to interact with the user.
-- [ ] This class will create an object of type RPSGame and invoke the methods from that class to run the game.
+- [x] This class will create an object of type RPSGame and invoke the methods from that class to run the game.
 - [ ] The constructor sets up the display and create the instance of RPSGame.
 - [x] Use the shell file provided by Prof. Masters, and it use as a starting point.
 - Code goes inside the listener class:
