@@ -29,19 +29,19 @@ A Rock, Paper, Scissors Game School Project that allows a user to play RPS again
 ## Part 2: The GUI ##
 Write the GUI program to interact with the user.
 - [x] This class will create an object of type RPSGame and invoke the methods from that class to run the game.
-- [ ] The constructor sets up the display and create the instance of RPSGame.
+- [x] The constructor sets up the display and create the instance of RPSGame.
 - [x] Use the shell file provided by Prof. Masters, and it use as a starting point.
 - Code goes inside the listener class:
-- [ ] The listener classes responds to the user selecting a move, invokes the appropriate methods in the RPS game class, and then updates the display. (Do not write all of the code inside the single listener class method. Write helper methods that are invoked from the listener class to break up and organize the code.)
+- [x] The listener classes responds to the user selecting a move, invokes the appropriate methods in the RPS game class, and then updates the display. (Do not write all of the code inside the single listener class method. Write helper methods that are invoked from the listener class to break up and organize the code.)
 - Here is some pseudocode for the listener class. It is not required to follow this algorithm.
-  - [ ] get the move from the user by determining which button was clicked
+  - [x] get the move from the user by determining which button was clicked
   - [ ] update the display of the user’s move 
-  - [ ] generate a move by the computer by invoking a method on the RPSGame object
-  - [ ] update the display of the computer’s move 
-  - [ ] determine the outcome (the winner) by invoking a method on the RPS object
-  - [ ] update the display of the outcome
-  - [ ] get the updated game stats (number of computer wins, number of user wins, and number of ties) by invoking methods on the RPS object
-  - [ ] update the display of the outcome 
+  - [x] generate a move by the computer by invoking a method on the RPSGame object
+  - [x] update the display of the computer’s move 
+  - [x] determine the outcome (the winner) by invoking a method on the RPS object
+  - [x] update the display of the outcome
+  - [x] get the updated game stats (number of computer wins, number of user wins, and number of ties) by invoking methods on the RPS object
+  - [x] update the display of the outcome 
 
 - [x] Add images 
  
