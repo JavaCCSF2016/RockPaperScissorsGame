@@ -120,39 +120,42 @@ public class RPSDisplay extends JFrame {
 	/* determines which button was clicked and updates the game accordingly */
 	private class GameListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
-			if(event.getSource()== rockButton) {
+			if(event.getSource() == rockButton) {
 				game.generateComputerPlay(); 
-                if ( game.findWinner(game.ROCK) == game.LOSE ){
+				int userMove = game.findWinner(game.SCISSOR);
+                if ( userMove == game.LOSE ){
                 	statusC.setText("Computer Wins: " + game.getLoses());
                 }
-                else if ( game.findWinner(game.ROCK) == game.TIE ){
+                else if ( userMove == game.TIE ){
                 	statusT.setText("Ties: " + game.getTies());
                 }
-                else if ( game.findWinner(game.ROCK) == game.WIN ){
+                else if ( userMove == game.WIN ){
                 	statusU.setText("User Wins: " + game.getWins());
                 }
 			}
-			else if(event.getSource()== paperButton) {
+			else if(event.getSource() == paperButton) {
             	game.generateComputerPlay();   
-                if ( game.findWinner(game.PAPER) == game.LOSE ){
+            	int userMove = game.findWinner(game.SCISSOR);
+                if ( userMove == game.LOSE ){
                     statusC.setText("Computer Wins: " + game.getLoses());
                     }
-                else if ( game.findWinner(game.PAPER) == game.TIE ){
+                else if ( userMove == game.TIE ){
                     statusT.setText("Ties: " + game.getTies());
                     }
-                else if ( game.findWinner(game.PAPER) == game.WIN ){
+                else if ( userMove == game.WIN ){
                     statusU.setText("User Wins: " + game.getWins());
                     }
             }
-            else if(event.getSource()== scissorsButton){
+            else if(event.getSource() == scissorsButton){
             	game.generateComputerPlay();
-            	if ( game.findWinner(game.SCISSOR) == game.LOSE ){
+            	int userMove = game.findWinner(game.SCISSOR);
+            	if ( userMove == game.LOSE ){
                 	statusC.setText("Computer Wins: " + game.getLoses());
                 }
-                else if ( game.findWinner(game.SCISSOR) == game.TIE ){
+                else if ( userMove == game.TIE ){
                 	statusT.setText("Ties: " + game.getTies());
                 }
-                else if ( game.findWinner(game.SCISSOR) == game.WIN ){
+                else if ( userMove == game.WIN ){
                 	statusU.setText("User Wins: " + game.getWins());
                 }
             }
