@@ -120,7 +120,43 @@ public class RPSDisplay extends JFrame {
 	/* determines which button was clicked and updates the game accordingly */
 	private class GameListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
-			// YOUR CODE GOES HERE!
+			if(event.getSource()== rockButton) {
+				game.generateComputerPlay(); 
+                if ( game.findWinner(game.ROCK)== game.LOSE ){
+                	statusC.setText("Computer Wins: " + game.getLoses());
+                }
+                else if ( game.findWinner(game.ROCK)== game.TIE ){
+                	statusT.setText("Ties: " + game.getTies());;
+                }
+                else if ( game.findWinner(game.ROCK)== game.WIN ){
+                	statusT.setText("User Wins: " + game.getWins());
+                }
+			}
+            if(event.getSource()== paperButton) {
+            	game.generateComputerPlay();   
+                if ( game.findWinner(game.PAPER)== game.LOSE ){
+                    statusC.setText("Computer Wins: " + game.getLoses());
+                    }
+                else if ( game.findWinner(game.PAPER)== game.TIE ){
+                    statusT.setText("Ties: " + game.getTies());;
+                    }
+                else if ( game.findWinner(game.PAPER)== game.WIN ){
+                    statusT.setText("User Wins: " + game.getWins());
+                    }
+            }
+            else if(event.getSource()== scissorsButton){
+            	game.generateComputerPlay();
+            	if ( game.findWinner(game.SCISSOR)== game.LOSE ){
+                	statusC.setText("Computer Wins: " + game.getLoses());
+                }
+                else if ( game.findWinner(game.SCISSOR)== game.TIE ){
+                	statusT.setText("Ties: " + game.getTies());;
+                }
+                else if ( game.findWinner(game.SCISSOR)== game.WIN ){
+                	statusT.setText("User Wins: " + game.getWins());
+                }
+            }
+           
 		}
 	}
 
