@@ -43,7 +43,7 @@ Write the GUI program to interact with the user.
   - [x] get the updated game stats (number of computer wins, number of user wins, and number of ties) by invoking methods on the RPS object
   - [x] update the display of the outcome 
 
-- [x] Add images 
+- [ ] Add images 
  
 ## Part 3: Extra Credit A - Betting ##
 Add support for betting.
