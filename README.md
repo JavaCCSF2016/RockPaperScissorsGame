@@ -48,8 +48,8 @@ Write the GUI program to interact with the user.
 ## Part 3: Extra Credit A - Betting ##
 Add support for betting.
 - In RPSGame:
-  - [ ] Add instance data to represent the amount the user is betting (the same amount on each match) and the user’s balance of money. Write appropriate getters and setters for these instance data. 
-  - [ ] In the findWinner method, when the number of wins/losses is updated, also update the user’s balance by adding or subtracting their bet amount.
+  - [x] Add instance data to represent the amount the user is betting (the same amount on each match) and the user’s balance of money. Write appropriate getters and setters for these instance data. 
+  - [x] In the findWinner method, when the number of wins/losses is updated, also update the user’s balance by adding or subtracting their bet amount.
 - In the GUI program:
 - [ ] Use the JOptionPane class to ask the user about betting prior to the game starting. This code should go inside the main method.
 - [ ] Use the JOptionPane.showConfirmDialog method to determine whether the user wants to bet.
