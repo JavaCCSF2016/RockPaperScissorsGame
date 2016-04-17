@@ -122,40 +122,40 @@ public class RPSDisplay extends JFrame {
 		public void actionPerformed(ActionEvent event) {
 			if(event.getSource() == rockButton) {
 				game.generateComputerPlay(); 
-				int userMove = game.findWinner(game.SCISSOR);
-                if ( userMove == game.LOSE ){
+				int userMove = game.findWinner(RPSGame.SCISSOR);
+                if ( userMove == RPSGame.LOSE ){
                 	statusC.setText("Computer Wins: " + game.getLoses());
                 }
-                else if ( userMove == game.TIE ){
+                else if ( userMove == RPSGame.TIE ){
                 	statusT.setText("Ties: " + game.getTies());
                 }
-                else if ( userMove == game.WIN ){
+                else if ( userMove == RPSGame.WIN ){
                 	statusU.setText("User Wins: " + game.getWins());
                 }
 			}
 			else if(event.getSource() == paperButton) {
             	game.generateComputerPlay();   
-            	int userMove = game.findWinner(game.SCISSOR);
-                if ( userMove == game.LOSE ){
+            	int userMove = game.findWinner(RPSGame.SCISSOR);
+                if ( userMove == RPSGame.LOSE ){
                     statusC.setText("Computer Wins: " + game.getLoses());
                     }
-                else if ( userMove == game.TIE ){
+                else if ( userMove == RPSGame.TIE ){
                     statusT.setText("Ties: " + game.getTies());
                     }
-                else if ( userMove == game.WIN ){
+                else if ( userMove == RPSGame.WIN ){
                     statusU.setText("User Wins: " + game.getWins());
                     }
             }
             else if(event.getSource() == scissorsButton){
             	game.generateComputerPlay();
-            	int userMove = game.findWinner(game.SCISSOR);
-            	if ( userMove == game.LOSE ){
+            	int userMove = game.findWinner(RPSGame.SCISSOR);
+            	if ( userMove == RPSGame.LOSE ){
                 	statusC.setText("Computer Wins: " + game.getLoses());
                 }
-                else if ( userMove == game.TIE ){
+                else if ( userMove == RPSGame.TIE ){
                 	statusT.setText("Ties: " + game.getTies());
                 }
-                else if ( userMove == game.WIN ){
+                else if ( userMove == RPSGame.WIN ){
                 	statusU.setText("User Wins: " + game.getWins());
                 }
             }
