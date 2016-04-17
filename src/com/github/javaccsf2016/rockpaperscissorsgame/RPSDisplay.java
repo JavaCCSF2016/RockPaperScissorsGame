@@ -8,7 +8,7 @@ import javax.swing.*;
 
 public class RPSDisplay extends JFrame {
 	
-	public static Font Meiryo20 = new Font("Meiryo UI", 0, 20);
+	public static final Font Meiryo20 = new Font("Meiryo UI", 0, 20);
 
 	// buttons for the user to enter their move
 	private JButton rockButton, paperButton, scissorsButton;
