@@ -122,38 +122,38 @@ public class RPSDisplay extends JFrame {
 		public void actionPerformed(ActionEvent event) {
 			if(event.getSource()== rockButton) {
 				game.generateComputerPlay(); 
-                if ( game.findWinner(game.ROCK)== game.LOSE ){
+                if ( game.findWinner(game.ROCK) == game.LOSE ){
                 	statusC.setText("Computer Wins: " + game.getLoses());
                 }
-                else if ( game.findWinner(game.ROCK)== game.TIE ){
-                	statusT.setText("Ties: " + game.getTies());;
+                else if ( game.findWinner(game.ROCK) == game.TIE ){
+                	statusT.setText("Ties: " + game.getTies());
                 }
-                else if ( game.findWinner(game.ROCK)== game.WIN ){
-                	statusT.setText("User Wins: " + game.getWins());
+                else if ( game.findWinner(game.ROCK) == game.WIN ){
+                	statusU.setText("User Wins: " + game.getWins());
                 }
 			}
-            if(event.getSource()== paperButton) {
+			else if(event.getSource()== paperButton) {
             	game.generateComputerPlay();   
-                if ( game.findWinner(game.PAPER)== game.LOSE ){
+                if ( game.findWinner(game.PAPER) == game.LOSE ){
                     statusC.setText("Computer Wins: " + game.getLoses());
                     }
-                else if ( game.findWinner(game.PAPER)== game.TIE ){
-                    statusT.setText("Ties: " + game.getTies());;
+                else if ( game.findWinner(game.PAPER) == game.TIE ){
+                    statusT.setText("Ties: " + game.getTies());
                     }
-                else if ( game.findWinner(game.PAPER)== game.WIN ){
-                    statusT.setText("User Wins: " + game.getWins());
+                else if ( game.findWinner(game.PAPER) == game.WIN ){
+                    statusU.setText("User Wins: " + game.getWins());
                     }
             }
             else if(event.getSource()== scissorsButton){
             	game.generateComputerPlay();
-            	if ( game.findWinner(game.SCISSOR)== game.LOSE ){
+            	if ( game.findWinner(game.SCISSOR) == game.LOSE ){
                 	statusC.setText("Computer Wins: " + game.getLoses());
                 }
-                else if ( game.findWinner(game.SCISSOR)== game.TIE ){
-                	statusT.setText("Ties: " + game.getTies());;
+                else if ( game.findWinner(game.SCISSOR) == game.TIE ){
+                	statusT.setText("Ties: " + game.getTies());
                 }
-                else if ( game.findWinner(game.SCISSOR)== game.WIN ){
-                	statusT.setText("User Wins: " + game.getWins());
+                else if ( game.findWinner(game.SCISSOR) == game.WIN ){
+                	statusU.setText("User Wins: " + game.getWins());
                 }
             }
            
