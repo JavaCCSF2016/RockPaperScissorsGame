@@ -29,27 +29,27 @@ A Rock, Paper, Scissors Game School Project that allows a user to play RPS again
 ## Part 2: The GUI ##
 Write the GUI program to interact with the user.
 - [x] This class will create an object of type RPSGame and invoke the methods from that class to run the game.
-- [ ] The constructor sets up the display and create the instance of RPSGame.
+- [x] The constructor sets up the display and create the instance of RPSGame.
 - [x] Use the shell file provided by Prof. Masters, and it use as a starting point.
 - Code goes inside the listener class:
-- [ ] The listener classes responds to the user selecting a move, invokes the appropriate methods in the RPS game class, and then updates the display. (Do not write all of the code inside the single listener class method. Write helper methods that are invoked from the listener class to break up and organize the code.)
+- [x] The listener classes responds to the user selecting a move, invokes the appropriate methods in the RPS game class, and then updates the display. (Do not write all of the code inside the single listener class method. Write helper methods that are invoked from the listener class to break up and organize the code.)
 - Here is some pseudocode for the listener class. It is not required to follow this algorithm.
-  - [ ] get the move from the user by determining which button was clicked
+  - [x] get the move from the user by determining which button was clicked
   - [ ] update the display of the user’s move 
-  - [ ] generate a move by the computer by invoking a method on the RPSGame object
-  - [ ] update the display of the computer’s move 
-  - [ ] determine the outcome (the winner) by invoking a method on the RPS object
-  - [ ] update the display of the outcome
-  - [ ] get the updated game stats (number of computer wins, number of user wins, and number of ties) by invoking methods on the RPS object
-  - [ ] update the display of the outcome 
+  - [x] generate a move by the computer by invoking a method on the RPSGame object
+  - [x] update the display of the computer’s move 
+  - [x] determine the outcome (the winner) by invoking a method on the RPS object
+  - [x] update the display of the outcome
+  - [x] get the updated game stats (number of computer wins, number of user wins, and number of ties) by invoking methods on the RPS object
+  - [x] update the display of the outcome 
 
-- [x] Add images 
+- [ ] Add images 
  
 ## Part 3: Extra Credit A - Betting ##
 Add support for betting.
 - In RPSGame:
-  - [ ] Add instance data to represent the amount the user is betting (the same amount on each match) and the user’s balance of money. Write appropriate getters and setters for these instance data. 
-  - [ ] In the findWinner method, when the number of wins/losses is updated, also update the user’s balance by adding or subtracting their bet amount.
+  - [x] Add instance data to represent the amount the user is betting (the same amount on each match) and the user’s balance of money. Write appropriate getters and setters for these instance data. 
+  - [x] In the findWinner method, when the number of wins/losses is updated, also update the user’s balance by adding or subtracting their bet amount.
 - In the GUI program:
 - [ ] Use the JOptionPane class to ask the user about betting prior to the game starting. This code should go inside the main method.
 - [ ] Use the JOptionPane.showConfirmDialog method to determine whether the user wants to bet.
