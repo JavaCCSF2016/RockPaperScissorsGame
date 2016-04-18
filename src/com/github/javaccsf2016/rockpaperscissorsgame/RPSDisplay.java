@@ -49,12 +49,12 @@ public class RPSDisplay extends JFrame {
 		compPlay = new JLabel();
 		compPlay.setVerticalTextPosition(SwingConstants.BOTTOM);
 		compPlay.setHorizontalTextPosition(SwingConstants.CENTER);
-		compPlay.setBorder(BorderFactory.createLineBorder(Color.black, 5));
+		compPlay.setBorder(BorderFactory.createLineBorder(Color.RED, 5));
 		compPlay.setForeground(Color.cyan);
 		userPlay = new JLabel();
 		userPlay.setVerticalTextPosition(SwingConstants.BOTTOM);
 		userPlay.setHorizontalTextPosition(SwingConstants.CENTER);
-		userPlay.setBorder(BorderFactory.createLineBorder(Color.black, 5));
+		userPlay.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 5));
 		userPlay.setForeground(Color.cyan);
 		
 		outcome = new JLabel();
@@ -62,17 +62,18 @@ public class RPSDisplay extends JFrame {
 		outcome.setForeground(Color.pink);
 		
 		JPanel imageOutcomePanel = new JPanel();
-		imageOutcomePanel.setBackground(Color.black);
+		imageOutcomePanel.setBackground(Color.BLUE);
 		imageOutcomePanel.setLayout(new BorderLayout());
 		imageOutcomePanel.add(compPlay, BorderLayout.WEST);
 		imageOutcomePanel.add(userPlay, BorderLayout.EAST);
 		imageOutcomePanel.add(outcome, BorderLayout.SOUTH);
 		
+		
 		// creates the labels for the status of the game (number of wins, losses, and ties);
 		// the status labels will be displayed in a single panel
-		statusC = new JLabel("Computer Wins: " + game.getLoses());
-		statusU = new JLabel("User Wins: " + game.getWins());
-		statusT = new JLabel("Ties: " + game.getTies());
+		statusC = new JLabel("Computer Wins:" + game.getLoses());
+		statusU = new JLabel("  User Wins:" + game.getWins());
+		statusT = new JLabel("  Ties:" + game.getTies());
 		statusC.setForeground(Color.white);
 		statusC.setFont(Meiryo20);
 		statusU.setForeground(Color.white);
@@ -80,7 +81,7 @@ public class RPSDisplay extends JFrame {
 		statusT.setForeground(Color.white);
 		statusT.setFont(Meiryo20);
 		JPanel statusPanel = new JPanel();
-		statusPanel.setBackground(Color.black);
+		statusPanel.setBackground(Color.BLACK);
 		statusPanel.add(statusC);
 		statusPanel.add(statusU);
 		statusPanel.add(statusT);
@@ -121,48 +122,61 @@ public class RPSDisplay extends JFrame {
 	private class GameListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			if(event.getSource() == rockButton) {
-				game.generateComputerPlay(); 
-				int userMove = game.findWinner(game.SCISSOR);
-                if ( userMove == game.LOSE ){
-                	statusC.setText("Computer Wins: " + game.getLoses());
-                }
-                else if ( userMove == game.TIE ){
-                	statusT.setText("Ties: " + game.getTies());
-                }
-                else if ( userMove == game.WIN ){
-                	statusU.setText("User Wins: " + game.getWins());
-                }
+				playRock(game, statusC, statusT, statusU);
 			}
 			else if(event.getSource() == paperButton) {
-            	game.generateComputerPlay();   
-            	int userMove = game.findWinner(game.SCISSOR);
-                if ( userMove == game.LOSE ){
-                    statusC.setText("Computer Wins: " + game.getLoses());
-                    }
-                else if ( userMove == game.TIE ){
-                    statusT.setText("Ties: " + game.getTies());
-                    }
-                else if ( userMove == game.WIN ){
-                    statusU.setText("User Wins: " + game.getWins());
-                    }
+				playPaper(game, statusC, statusT, statusU);
             }
             else if(event.getSource() == scissorsButton){
-            	game.generateComputerPlay();
-            	int userMove = game.findWinner(game.SCISSOR);
-            	if ( userMove == game.LOSE ){
-                	statusC.setText("Computer Wins: " + game.getLoses());
-                }
-                else if ( userMove == game.TIE ){
-                	statusT.setText("Ties: " + game.getTies());
-                }
-                else if ( userMove == game.WIN ){
-                	statusU.setText("User Wins: " + game.getWins());
-                }
+            	playScissors(game, statusC, statusT, statusU);
             }
            
 		}
 	}
-
+	
+	public static void playRock(RPSGame game, JLabel statusC, JLabel statusT, JLabel statusU){
+		game.generateComputerPlay(); 
+		int result = game.findWinner(game.ROCK);
+        if ( result == game.LOSE ){
+        	statusC.setText("Computer Wins: " + game.getLoses());
+        }
+        else if ( result == game.TIE ){
+        	statusT.setText("Ties: " + game.getTies());
+        }
+        else if ( result == game.WIN ){
+        	statusU.setText("User Wins: " + game.getWins());
+        }
+	}
+	
+	public static void playPaper(RPSGame game, JLabel statusC, JLabel statusT, JLabel statusU){
+		game.generateComputerPlay();
+    	int result = game.findWinner(game.PAPER);
+    	if ( result == game.LOSE ){
+        	statusC.setText("Computer Wins: " + game.getLoses());
+        }
+        else if ( result == game.TIE ){
+        	statusT.setText("Ties: " + game.getTies());
+        }
+        else if ( result == game.WIN ){
+        	statusU.setText("User Wins: " + game.getWins());
+        }
+    }
+	
+	public static void playScissors(RPSGame game, JLabel statusC, JLabel statusT, JLabel statusU){
+		game.generateComputerPlay();   
+		int result = game.findWinner(game.SCISSOR);
+		if ( result == game.LOSE ){
+			statusC.setText("Computer Wins: " + game.getLoses());
+        }
+		else if ( result == game.TIE ){
+			statusT.setText("Ties: " + game.getTies());
+        }
+		else if ( result == game.WIN ){
+			statusU.setText("User Wins: " + game.getWins());
+        }
+	}
+	
+	
 	
 	public static void main(String args[]) {
 		// create an object of your class
