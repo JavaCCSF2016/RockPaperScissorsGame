@@ -136,42 +136,42 @@ public class RPSDisplay extends JFrame {
 	
 	public static void playRock(RPSGame game, JLabel statusC, JLabel statusT, JLabel statusU){
 		game.generateComputerPlay(); 
-		int result = game.findWinner(game.ROCK);
-        if ( result == game.LOSE ){
+		int result = game.findWinner(RPSGame.ROCK);
+        if ( result == RPSGame.LOSE ){
         	statusC.setText("Computer Wins: " + game.getLoses());
         }
-        else if ( result == game.TIE ){
+        else if ( result == RPSGame.TIE ){
         	statusT.setText("Ties: " + game.getTies());
         }
-        else if ( result == game.WIN ){
+        else if ( result == RPSGame.WIN ){
         	statusU.setText("User Wins: " + game.getWins());
         }
 	}
 	
 	public static void playPaper(RPSGame game, JLabel statusC, JLabel statusT, JLabel statusU){
 		game.generateComputerPlay();
-    	int result = game.findWinner(game.PAPER);
-    	if ( result == game.LOSE ){
+    	int result = game.findWinner(RPSGame.PAPER);
+    	if ( result == RPSGame.LOSE ){
         	statusC.setText("Computer Wins: " + game.getLoses());
         }
-        else if ( result == game.TIE ){
+        else if ( result == RPSGame.TIE ){
         	statusT.setText("Ties: " + game.getTies());
         }
-        else if ( result == game.WIN ){
+        else if ( result == RPSGame.WIN ){
         	statusU.setText("User Wins: " + game.getWins());
         }
     }
 	
 	public static void playScissors(RPSGame game, JLabel statusC, JLabel statusT, JLabel statusU){
 		game.generateComputerPlay();   
-		int result = game.findWinner(game.SCISSOR);
-		if ( result == game.LOSE ){
+		int result = game.findWinner(RPSGame.SCISSOR);
+		if ( result == RPSGame.LOSE ){
 			statusC.setText("Computer Wins: " + game.getLoses());
         }
-		else if ( result == game.TIE ){
+		else if ( result == RPSGame.TIE ){
 			statusT.setText("Ties: " + game.getTies());
         }
-		else if ( result == game.WIN ){
+		else if ( result == RPSGame.WIN ){
 			statusU.setText("User Wins: " + game.getWins());
         }
 	}
