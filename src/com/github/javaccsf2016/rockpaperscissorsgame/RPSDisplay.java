@@ -141,6 +141,9 @@ public class RPSDisplay extends JFrame {
 	public void playRock(){
 		game.generateComputerPlay(); 
 		int result = game.findWinner(RPSGame.ROCK);
+		compPlay.setFont(Meiryo20);
+		userPlay.setFont(Meiryo20);
+		outcome.setFont(Meiryo20);
         if ( result == RPSGame.LOSE ){
         	statusC.setText("Computer Wins: " + game.getLoses());
         	compPlay.setIcon(paperImage);
@@ -170,6 +173,9 @@ public class RPSDisplay extends JFrame {
 	public void playPaper(){
 		game.generateComputerPlay();
     	int result = game.findWinner(RPSGame.PAPER);
+    	compPlay.setFont(Meiryo20);
+		userPlay.setFont(Meiryo20);
+		outcome.setFont(Meiryo20);
     	if ( result == RPSGame.LOSE ){
         	statusC.setText("Computer Wins: " + game.getLoses());
         	compPlay.setIcon(scissorsImage);
@@ -199,6 +205,9 @@ public class RPSDisplay extends JFrame {
 	public void playScissors(){
 		game.generateComputerPlay();   
 		int result = game.findWinner(RPSGame.SCISSOR);
+		compPlay.setFont(Meiryo20);
+		userPlay.setFont(Meiryo20);
+		outcome.setFont(Meiryo20);
 		if ( result == RPSGame.LOSE ){
 			statusC.setText("Computer Wins: " + game.getLoses());
 			compPlay.setIcon(rockImage);
