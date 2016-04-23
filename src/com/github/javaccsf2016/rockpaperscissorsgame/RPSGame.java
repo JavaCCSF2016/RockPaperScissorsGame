@@ -20,6 +20,10 @@ public class RPSGame {
 	private int betMoney;
 	private int balance;
 	
+	public static void main(String args[]) {
+		RPSCommandLineGame.commandLineGame();
+	}
+	
 	public RPSGame() {
 		numberOfTies = 0;
 		numberOfWins = 0;
