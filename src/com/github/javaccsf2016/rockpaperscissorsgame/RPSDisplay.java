@@ -96,7 +96,6 @@ public class RPSDisplay extends JFrame {
 			balance.setFont(Meiryo20);
 			statusPanel.add(balance);
 		}
-		System.out.println(game.getBettingAmount());
 
 		// the play and status panels are nested in a single panel
 		JPanel gamePanel = new JPanel();
@@ -205,7 +204,7 @@ public class RPSDisplay extends JFrame {
 			  } while(!(bettingAmount >= 0 && bettingAmount <= RPSGame.INITIAL_MONEY));
 		}
 		RPSDisplay frame = new RPSDisplay(result);
-		System.out.println(frame.game.setBettingAmount(bettingAmount));
+		frame.game.setBettingAmount(bettingAmount);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
