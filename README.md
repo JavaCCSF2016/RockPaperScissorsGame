@@ -35,7 +35,7 @@ Write the GUI program to interact with the user.
 - [x] The listener classes responds to the user selecting a move, invokes the appropriate methods in the RPS game class, and then updates the display. (Do not write all of the code inside the single listener class method. Write helper methods that are invoked from the listener class to break up and organize the code.)
 - Here is some pseudocode for the listener class. It is not required to follow this algorithm.
   - [x] get the move from the user by determining which button was clicked
-  - [ ] update the display of the user’s move 
+  - [x] update the display of the user’s move 
   - [x] generate a move by the computer by invoking a method on the RPSGame object
   - [x] update the display of the computer’s move 
   - [x] determine the outcome (the winner) by invoking a method on the RPS object
@@ -43,7 +43,7 @@ Write the GUI program to interact with the user.
   - [x] get the updated game stats (number of computer wins, number of user wins, and number of ties) by invoking methods on the RPS object
   - [x] update the display of the outcome 
 
-- [ ] Add images 
+- [x] Add images 
  
 ## Part 3: Extra Credit A - Betting ##
 Add support for betting.
@@ -51,13 +51,13 @@ Add support for betting.
   - [x] Add instance data to represent the amount the user is betting (the same amount on each match) and the user’s balance of money. Write appropriate getters and setters for these instance data. 
   - [x] In the findWinner method, when the number of wins/losses is updated, also update the user’s balance by adding or subtracting their bet amount.
 - In the GUI program:
-- [ ] Use the JOptionPane class to ask the user about betting prior to the game starting. This code should go inside the main method.
-- [ ] Use the JOptionPane.showConfirmDialog method to determine whether the user wants to bet.
-- [ ] If the user wants to bet, use the JOptionPane.showInputDialog method to find out how much the user wants to bet.
-- [ ] Change the RPSGUIGame constructor so that it takes one parameter: the bet amount.
-- [ ] Create a new JLabel to display the user’s balance. I recommend adding the label to the statusPanel. You can choose another place if you want.
-- [ ] If the user is betting, when the display of the stats is updated, update the display of the balance. 
-- [ ] If the user is not betting, no money information should be displayed during the game.
+- [x] Use the JOptionPane class to ask the user about betting prior to the game starting. This code should go inside the main method.
+- [x] Use the JOptionPane.showConfirmDialog method to determine whether the user wants to bet.
+- [x] If the user wants to bet, use the JOptionPane.showInputDialog method to find out how much the user wants to bet.
+- [x] Change the RPSGUIGame constructor so that it takes one parameter: the bet amount.
+- [x] Create a new JLabel to display the user’s balance. I recommend adding the label to the statusPanel. You can choose another place if you want.
+- [x] If the user is betting, when the display of the stats is updated, update the display of the balance. 
+- [x] If the user is not betting, no money information should be displayed during the game.
 
 ## Part 4: Extra Credit B - Text-Based Program ##
 Write a text-based driver program that allows the user to play through the console (instead of through a GUI).
