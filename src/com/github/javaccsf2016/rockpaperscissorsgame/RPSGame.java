@@ -76,4 +76,8 @@ public class RPSGame {
 		return this.numberOfTies;
 	}
 	
+	public int getCompMove() {
+		return this.move;
+	}
+	
 }
