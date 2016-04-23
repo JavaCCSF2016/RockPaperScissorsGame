@@ -33,9 +33,8 @@ public class RPSGame {
 	}
 	
 	public boolean setBettingAmount(int money) {
-		if(money >= 0 && money >= this.balance) { 
+		if(money >= 0 && money <= this.balance) { 
 			this.betMoney = money;
-			this.balance -= money;
 			return true;
 		} else {
 			return false;
@@ -46,17 +45,14 @@ public class RPSGame {
 		if (userMove >= ROCK && userMove <= SCISSOR) {
 			if (userMove == this.move) {
 				this.numberOfTies++;
-				this.balance += betMoney;
-				betMoney = 0;
 				return TIE;
 			} else if(userMove - this.move == 1 || userMove - this.move == -2) {
 				this.numberOfWins++;
-				this.balance += betMoney * 2;
-				betMoney = 0;
+				this.balance += betMoney;
 				return WIN;
 			} else {
 				this.numberOfLoses++;
-				betMoney = 0;
+				this.balance -= betMoney;
 				return LOSE;
 			} 
 		} else {
@@ -78,6 +74,14 @@ public class RPSGame {
 	
 	public int getCompMove() {
 		return this.move;
+	}
+	
+	public int getBalance() {
+		return this.balance;
+	}
+	
+	public int getBettingAmount() {
+		return this.betMoney;
 	}
 	
 }
