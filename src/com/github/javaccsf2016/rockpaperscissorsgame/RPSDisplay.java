@@ -42,9 +42,9 @@ public class RPSDisplay extends JFrame {
 		// creates the labels for displaying the computer and user's move;
 		// the images for the moves and the outcome of a match-up will be displayed
 		// in a single panel
-		rockImage = new ImageIcon("rock.jpg");
-		paperImage = new ImageIcon("paper.jpg");
-		scissorsImage = new ImageIcon("scissors.jpg");
+		rockImage = new ImageIcon("img/rock.jpg");
+		paperImage = new ImageIcon("img/paper.jpg");
+		scissorsImage = new ImageIcon("img/scissors.jpg");
 
 		compPlay = new JLabel();
 		compPlay.setVerticalTextPosition(SwingConstants.BOTTOM);
@@ -88,7 +88,7 @@ public class RPSDisplay extends JFrame {
 
 		// the play and status panels are nested in a single panel
 		JPanel gamePanel = new JPanel();
-		gamePanel.setPreferredSize(new Dimension(600, 600));
+		gamePanel.setPreferredSize(new Dimension(800, 600));
 		gamePanel.setBackground(Color.black);
 		gamePanel.add(imageOutcomePanel);
 		gamePanel.add(statusPanel);
