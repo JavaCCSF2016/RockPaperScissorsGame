@@ -14,7 +14,7 @@ public class RPSDisplay extends JFrame {
 	private JButton rockButton, paperButton, scissorsButton;
 
 	// labels to display the number of wins/losses/ties
-	private JLabel statusC, statusU, statusT;
+	private JLabel statusC, statusU, statusT, balance;
 
 	// images and labels to display the computer and user's moves and the outcome of a match-up
 	private ImageIcon rockImage, paperImage, scissorsImage;
@@ -24,7 +24,7 @@ public class RPSDisplay extends JFrame {
 	// the game object
 	private RPSGame game;
 
-	public RPSDisplay() {
+	public RPSDisplay(int result) {
 
 		// initializes the window
 		super("Rock, Paper, Scissors, Go!");
@@ -79,6 +79,7 @@ public class RPSDisplay extends JFrame {
 		statusC = new JLabel("Computer Wins:" + game.getLoses());
 		statusU = new JLabel("  User Wins:" + game.getWins());
 		statusT = new JLabel("  Ties:" + game.getTies());
+		balance = new JLabel("  Balance: " + game.getBalance());
 		statusC.setForeground(Color.white);
 		statusC.setFont(Meiryo20);
 		statusU.setForeground(Color.white);
@@ -90,6 +91,12 @@ public class RPSDisplay extends JFrame {
 		statusPanel.add(statusC);
 		statusPanel.add(statusU);
 		statusPanel.add(statusT);
+		if(result == JOptionPane.YES_OPTION) {
+			balance.setForeground(Color.white);
+			balance.setFont(Meiryo20);
+			statusPanel.add(balance);
+		}
+		System.out.println(game.getBettingAmount());
 
 		// the play and status panels are nested in a single panel
 		JPanel gamePanel = new JPanel();
@@ -152,6 +159,7 @@ public class RPSDisplay extends JFrame {
         	statusU.setText("User Wins: " + game.getWins());
         	outcome.setText("You Won!");
 		}
+		balance.setText("Balance: " + game.getBalance());
 		updateCompPlayIcon(game.getCompMove());
 		updateUserPlayIcon(move);
 	}
@@ -186,7 +194,18 @@ public class RPSDisplay extends JFrame {
 	
 	public static void main(String args[]) {
 		// create an object of your class
-		RPSDisplay frame = new RPSDisplay();
+		int bettingAmount = 0;
+		int result = JOptionPane.showConfirmDialog(null,"Are you going to bet",
+				"Comfirm",JOptionPane.YES_NO_OPTION);
+
+		if (result == JOptionPane.YES_OPTION) {
+			do {
+			bettingAmount = ( Integer.parseInt(JOptionPane.showInputDialog(null,
+					"Enter how much you want to bet (0 - " + RPSGame.INITIAL_MONEY + "): ")));
+			  } while(!(bettingAmount >= 0 && bettingAmount <= RPSGame.INITIAL_MONEY));
+		}
+		RPSDisplay frame = new RPSDisplay(result);
+		System.out.println(frame.game.setBettingAmount(bettingAmount));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
