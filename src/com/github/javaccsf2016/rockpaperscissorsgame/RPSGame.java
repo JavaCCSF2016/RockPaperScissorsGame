@@ -33,7 +33,7 @@ public class RPSGame {
 	}
 	
 	public boolean setBettingAmount(int money) {
-		if(money >= 0 && money > this.balance) { 
+		if(money >= 0 && money >= this.balance) { 
 			this.betMoney = money;
 			this.balance -= money;
 			return true;
