@@ -24,7 +24,7 @@ public class RPSDisplay extends JFrame {
 	// the game object
 	private RPSGame game;
 
-	public RPSDisplay(int result) {
+	public RPSDisplay(int isBetting) {
 
 		// initializes the window
 		super("Rock, Paper, Scissors, Go!");
@@ -91,7 +91,7 @@ public class RPSDisplay extends JFrame {
 		statusPanel.add(statusC);
 		statusPanel.add(statusU);
 		statusPanel.add(statusT);
-		if(result == JOptionPane.YES_OPTION) {
+		if(isBetting == JOptionPane.YES_OPTION) {
 			balance.setForeground(Color.white);
 			balance.setFont(Meiryo20);
 			statusPanel.add(balance);
@@ -198,10 +198,10 @@ public class RPSDisplay extends JFrame {
 
 
 
-		int result = JOptionPane.showConfirmDialog(null,"Are you going to bet",
+		int isBetting = JOptionPane.showConfirmDialog(null,"Are you going to bet",
 				"Comfirm",JOptionPane.YES_NO_OPTION);
 
-		if (result == JOptionPane.YES_OPTION) {
+		if (isBetting == JOptionPane.YES_OPTION) {
 			do {
 			bettingAmount = ( Integer.parseInt(JOptionPane.showInputDialog(null,
 
@@ -210,7 +210,7 @@ public class RPSDisplay extends JFrame {
 
 
 		}
-		RPSDisplay frame = new RPSDisplay(result);
+		RPSDisplay frame = new RPSDisplay(isBetting);
 		frame.game.setBettingAmount(bettingAmount);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

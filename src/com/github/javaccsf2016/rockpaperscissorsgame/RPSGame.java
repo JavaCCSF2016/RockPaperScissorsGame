@@ -82,6 +82,16 @@ public class RPSGame {
 		return this.betMoney;
 	}
 	
+	public String toString() {
+		String info = ("[STATS] Wins: " + this.getWins() +
+				   " | Ties: " + this.getTies() + 
+				   " | Loses: " + this.getLoses());
+		if (this.getBettingAmount() != 0) {
+			info += ("========================================\n" +
+					"Remaing Balance: " + this.getBalance());
+		}
+		return info;
+	}
 
 	
 }
