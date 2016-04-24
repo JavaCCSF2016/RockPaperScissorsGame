@@ -3,6 +3,10 @@ package com.github.javaccsf2016.rockpaperscissorsgame;
 import java.util.Scanner;
 
 public class RPSCommandLineGame {
+	public static void main(String args[]) {
+		commandLineGame();
+	}
+	
 	public static void commandLineGame() {
 		RPSGame cliGame = new RPSGame();
 		displayCommandLineGameHeader();
