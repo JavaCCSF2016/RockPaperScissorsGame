@@ -14,7 +14,7 @@ public class RPSDisplay extends JFrame {
 	private JButton rockButton, paperButton, scissorsButton;
 
 	// labels to display the number of wins/losses/ties
-	private JLabel statusC, statusU, statusT;
+	private JLabel statusC, statusU, statusT, balance;
 
 	// images and labels to display the computer and user's moves and the outcome of a match-up
 	private ImageIcon rockImage, paperImage, scissorsImage;
@@ -24,7 +24,7 @@ public class RPSDisplay extends JFrame {
 	// the game object
 	private RPSGame game;
 
-	public RPSDisplay() {
+	public RPSDisplay(int result) {
 
 		// initializes the window
 		super("Rock, Paper, Scissors, Go!");
@@ -51,15 +51,20 @@ public class RPSDisplay extends JFrame {
 		compPlay.setHorizontalTextPosition(SwingConstants.CENTER);
 		compPlay.setBorder(BorderFactory.createLineBorder(Color.RED, 5));
 		compPlay.setForeground(Color.cyan);
+		compPlay.setFont(Meiryo20);
+		compPlay.setText("Computer\'s move");
 		userPlay = new JLabel();
 		userPlay.setVerticalTextPosition(SwingConstants.BOTTOM);
 		userPlay.setHorizontalTextPosition(SwingConstants.CENTER);
 		userPlay.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 5));
 		userPlay.setForeground(Color.cyan);
+		userPlay.setFont(Meiryo20);
+		userPlay.setText("User\'s move");
 		
 		outcome = new JLabel();
 		outcome.setHorizontalTextPosition(SwingConstants.CENTER);
 		outcome.setForeground(Color.pink);
+		outcome.setFont(Meiryo20);
 		
 		JPanel imageOutcomePanel = new JPanel();
 		imageOutcomePanel.setBackground(Color.BLUE);
@@ -74,6 +79,7 @@ public class RPSDisplay extends JFrame {
 		statusC = new JLabel("Computer Wins:" + game.getLoses());
 		statusU = new JLabel("  User Wins:" + game.getWins());
 		statusT = new JLabel("  Ties:" + game.getTies());
+		balance = new JLabel("  Balance: " + game.getBalance());
 		statusC.setForeground(Color.white);
 		statusC.setFont(Meiryo20);
 		statusU.setForeground(Color.white);
@@ -85,6 +91,11 @@ public class RPSDisplay extends JFrame {
 		statusPanel.add(statusC);
 		statusPanel.add(statusU);
 		statusPanel.add(statusT);
+		if(result == JOptionPane.YES_OPTION) {
+			balance.setForeground(Color.white);
+			balance.setFont(Meiryo20);
+			statusPanel.add(balance);
+		}
 
 		// the play and status panels are nested in a single panel
 		JPanel gamePanel = new JPanel();
@@ -122,125 +133,78 @@ public class RPSDisplay extends JFrame {
 	private class GameListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			if(event.getSource() == rockButton) {
-				playRock();
+				play(RPSGame.ROCK);
 			}
 			else if(event.getSource() == paperButton) {
-				playPaper();
+				play(RPSGame.PAPER);
             }
             else if(event.getSource() == scissorsButton){
-            	playScissors();
+            	play(RPSGame.SCISSOR);
             }
            
 		}
 	}
-	/*
-	public static void playRock(RPSGame game, JLabel statusC, JLabel statusT,
-			JLabel statusU, JLabel userPlay, JLabel compPlay, ImageIcon 
-			rockImage, ImageIcon paperImage, ImageIcon scissorsImage){	
-			*/
-	public void playRock(){
-		game.generateComputerPlay(); 
-		int result = game.findWinner(RPSGame.ROCK);
-		compPlay.setFont(Meiryo20);
-		userPlay.setFont(Meiryo20);
-		outcome.setFont(Meiryo20);
-        if ( result == RPSGame.LOSE ){
-        	statusC.setText("Computer Wins: " + game.getLoses());
-        	compPlay.setIcon(paperImage);
-        	compPlay.setText("Computer's move");
-        	userPlay.setIcon(rockImage);
-        	userPlay.setText("User's move");
-        	outcome.setText("You Lost!");
-        }
-        else if ( result == RPSGame.TIE ){
-        	statusT.setText("Ties: " + game.getTies());
-        	compPlay.setIcon(rockImage);
-        	compPlay.setText("Computer's move");
-        	userPlay.setIcon(rockImage);
-        	userPlay.setText("User's move");
-        	outcome.setText("Tie Game!");
-        }
-        else if ( result == RPSGame.WIN ){
-        	statusU.setText("User Wins: " + game.getWins());
-        	compPlay.setIcon(scissorsImage);
-        	compPlay.setText("Computer's move");
-        	userPlay.setIcon(rockImage);
-        	userPlay.setText("User's move");
-        	outcome.setText("You Won!");
-        }
-	}
 	
-	public void playPaper(){
+	public void play(int move) {
 		game.generateComputerPlay();
-    	int result = game.findWinner(RPSGame.PAPER);
-    	compPlay.setFont(Meiryo20);
-		userPlay.setFont(Meiryo20);
-		outcome.setFont(Meiryo20);
-    	if ( result == RPSGame.LOSE ){
-        	statusC.setText("Computer Wins: " + game.getLoses());
-        	compPlay.setIcon(scissorsImage);
-        	compPlay.setText("Computer's move");
-        	userPlay.setIcon(paperImage);
-        	userPlay.setText("User's move");
-        	outcome.setText("You lost!");
-        }
-        else if ( result == RPSGame.TIE ){
-        	statusT.setText("Ties: " + game.getTies());
-        	compPlay.setIcon(paperImage);
-        	compPlay.setText("Computer's move");
-        	userPlay.setIcon(paperImage);
-        	userPlay.setText("User's move");
-        	outcome.setText("Tie Game!");
-        }
-        else if ( result == RPSGame.WIN ){
-        	statusU.setText("User Wins: " + game.getWins());
-        	compPlay.setIcon(rockImage);
-        	compPlay.setText("Computer's move");
-        	userPlay.setIcon(paperImage);
-        	userPlay.setText("User's move");
-        	outcome.setText("You Won!");
-        }
-    }
-	
-	public void playScissors(){
-		game.generateComputerPlay();   
-		int result = game.findWinner(RPSGame.SCISSOR);
-		compPlay.setFont(Meiryo20);
-		userPlay.setFont(Meiryo20);
-		outcome.setFont(Meiryo20);
+		int result = game.findWinner(move);
 		if ( result == RPSGame.LOSE ){
 			statusC.setText("Computer Wins: " + game.getLoses());
-			compPlay.setIcon(rockImage);
-			compPlay.setText("Computer's move");
-			userPlay.setIcon(scissorsImage);
-			userPlay.setText("User's move");
-			outcome.setText("You lost!");
-        }
-		else if ( result == RPSGame.TIE ){
+			outcome.setText("You Lost!");
+		} else if ( result == RPSGame.TIE ){
 			statusT.setText("Ties: " + game.getTies());
-			compPlay.setIcon(scissorsImage);
-			compPlay.setText("Computer's move");
-			userPlay.setIcon(scissorsImage);
-			userPlay.setText("User's move");
 			outcome.setText("Tie Game!");
-        }
-		else if ( result == RPSGame.WIN ){
-			statusU.setText("User Wins: " + game.getWins());
+		} else if ( result == RPSGame.WIN ){
+        	statusU.setText("User Wins: " + game.getWins());
+        	outcome.setText("You Won!");
+		}
+		balance.setText("Balance: " + game.getBalance());
+		updateCompPlayIcon(game.getCompMove());
+		updateUserPlayIcon(move);
+	}
+	
+	public void updateCompPlayIcon(int move) {
+		switch (move) {
+		case 0 : 
+			compPlay.setIcon(rockImage);
+			break;
+		case 1 :
 			compPlay.setIcon(paperImage);
-			compPlay.setText("Computer's move");
+			break;
+		case 2 :
+			compPlay.setIcon(scissorsImage);
+		}
+	}
+	
+	public void updateUserPlayIcon(int move) {
+		switch (move) {
+		case 0 : 
+			userPlay.setIcon(rockImage);
+			break;
+		case 1 :
+			userPlay.setIcon(paperImage);
+			break;
+		case 2 :
 			userPlay.setIcon(scissorsImage);
-			userPlay.setText("User's move");
-			outcome.setText("You Won!");
-        }
+		}
 	}
 	
 	
 	
 	public static void main(String args[]) {
 		// create an object of your class
-		RPSDisplay frame = new RPSDisplay();
+		double bettingAmount = 0.0;
+		int result = JOptionPane.showConfirmDialog(null,"Are you going to bet",
+				"Comfirm",JOptionPane.YES_NO_OPTION);
 
-		RPSCommandLineGame.commandLineGame();
+		if (result == JOptionPane.YES_OPTION) {
+			do {
+			bettingAmount = ( Integer.parseInt(JOptionPane.showInputDialog(null,
+					"Enter how much you want to bet( Must greater than 0! ) : " )));
+			  } while(!(bettingAmount > RPSGame.INITIAL));
+		}
+		RPSDisplay frame = new RPSDisplay(result);
+		frame.game.setBettingAmount(bettingAmount);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
