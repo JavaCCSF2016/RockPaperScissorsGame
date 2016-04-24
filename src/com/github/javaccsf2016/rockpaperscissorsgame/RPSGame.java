@@ -28,13 +28,10 @@ public class RPSGame {
 		this.compMove = rand.nextInt(3);
 	}
 	
-<<<<<<< HEAD
+
 	public boolean setBettingAmount(double money) {
 		if(money > INITIAL) { 
-=======
-	public boolean setBettingAmount(int money) {
-		if(money >= 0 && money <= this.balance) { 
->>>>>>> origin/master
+
 			this.betMoney = money;
 			return true;
 		} else {
@@ -74,7 +71,6 @@ public class RPSGame {
 	}
 	
 	public int getCompMove() {
-<<<<<<< HEAD
 		return this.compMove;
 	}
 	
@@ -83,17 +79,9 @@ public class RPSGame {
 	}
 	
 	public double getBettingAmount() {
-=======
-		return this.move;
-	}
-	
-	public int getBalance() {
-		return this.balance;
-	}
-	
-	public int getBettingAmount() {
->>>>>>> origin/master
 		return this.betMoney;
 	}
+	
+
 	
 }

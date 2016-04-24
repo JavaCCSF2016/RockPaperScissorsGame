@@ -193,24 +193,22 @@ public class RPSDisplay extends JFrame {
 	
 	public static void main(String args[]) {
 		// create an object of your class
-<<<<<<< HEAD
+
 		double bettingAmount = 0.0;
-=======
-		int bettingAmount = 0;
->>>>>>> origin/master
+
+
+
 		int result = JOptionPane.showConfirmDialog(null,"Are you going to bet",
 				"Comfirm",JOptionPane.YES_NO_OPTION);
 
 		if (result == JOptionPane.YES_OPTION) {
 			do {
 			bettingAmount = ( Integer.parseInt(JOptionPane.showInputDialog(null,
-<<<<<<< HEAD
+
 					"Enter how much you want to bet( Must greater than 0! ) : " )));
 			  } while(!(bettingAmount > RPSGame.INITIAL));
-=======
-					"Enter how much you want to bet (0 - " + RPSGame.INITIAL_MONEY + "): ")));
-			  } while(!(bettingAmount >= 0 && bettingAmount <= RPSGame.INITIAL_MONEY));
->>>>>>> origin/master
+
+
 		}
 		RPSDisplay frame = new RPSDisplay(result);
 		frame.game.setBettingAmount(bettingAmount);
