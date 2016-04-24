@@ -19,7 +19,7 @@ public class RPSCommandLineGame {
 	}
 	
 	public static void betting(RPSGame cliGame) {
-		System.out.println("Your balance is" + cliGame.getBalance());
+		System.out.println("Your balance is $" + cliGame.getBalance());
 		Scanner scan = new Scanner(System.in);
 		boolean valid = false;
 		while (valid == false) {
@@ -46,7 +46,8 @@ public class RPSCommandLineGame {
 				   " | Ties: " + cliGame.getTies() + 
 				   " | Loses: " + cliGame.getLoses());
 		if (cliGame.getBettingAmount() != 0) {
-			System.out.println("Remaing Balance: " + cliGame.getBalance());
+			System.out.println("========================================\n" +
+					"Remaing Balance: " + cliGame.getBalance());
 		}
 	}
 	
