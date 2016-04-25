@@ -1,4 +1,4 @@
-//LeoYulinLi, califoxco(Jiaming Yang), sunliuqixin, and Tsoek Yin Lee Liu
+//LeoYulinLi, califoxco(Jiaming Yang), qixin liu, and Tsoek Yin Lee Liu
 package com.github.javaccsf2016.rockpaperscissorsgame;
 
 import java.awt.*;
