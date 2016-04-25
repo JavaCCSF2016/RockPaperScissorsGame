@@ -1,3 +1,4 @@
+//LeoYulinLi, califoxco(Jiaming Yang), sunliuqixin, and Tsoek Yin Lee Liu
 package com.github.javaccsf2016.rockpaperscissorsgame;
 
 import java.util.Scanner;
