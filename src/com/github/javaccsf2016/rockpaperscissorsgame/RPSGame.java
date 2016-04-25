@@ -14,7 +14,7 @@ public class RPSGame {
 	public static final int INITIAL = 0;
 	
 	private int numberOfTies, numberOfWins, numberOfLoses, compMove;
-	private double betMoney, balance;
+	private double bettingAmount, balance;
 	
 	public RPSGame() {
 		numberOfTies = INITIAL;
@@ -32,7 +32,7 @@ public class RPSGame {
 	public boolean setBettingAmount(double money) {
 		if(money > INITIAL) { 
 
-			this.betMoney = money;
+			this.bettingAmount = money;
 			return true;
 		} else {
 			return false;
@@ -46,11 +46,11 @@ public class RPSGame {
 				return TIE;
 			} else if(userMove - this.compMove == 1 || userMove - this.compMove == -2) {
 				this.numberOfWins++;
-				this.balance += betMoney;
+				this.balance += bettingAmount;
 				return WIN;
 			} else {
 				this.numberOfLoses++;
-				this.balance -= betMoney;
+				this.balance -= bettingAmount;
 				return LOSE;
 			} 
 		} else {
@@ -79,7 +79,7 @@ public class RPSGame {
 	}
 	
 	public double getBettingAmount() {
-		return this.betMoney;
+		return this.bettingAmount;
 	}
 	
 	public String toString() {
